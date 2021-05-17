@@ -4,7 +4,8 @@
   "description": "",
   "main": "dist/index.ts",
   "scripts": {
-    "start": "tsc && node dist/index.js"
+    "generate": "tsc && node dist/generate.js",
+    "makedot": "tsc && node dist/toDot.js"
   },
   "repository": {
     "type": "git",
