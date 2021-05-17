@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.toLinks = exports.toNodes = void 0;
+exports.toGraph = exports.toLinks = exports.toNodes = void 0;
 const toCombinations = (xs) => {
     return xs.flatMap((x, i) => {
         return xs.slice(i + 1).map((y) => ([x, y]));
@@ -17,7 +17,6 @@ const toLinks = (nodes, p) => {
     const possibleLinks = toAllPossibleLinks(nodes);
     const links = possibleLinks.reduce((existingLinks, possibleLink) => {
         const randomFactor = Math.random();
-        console.log('link ', possibleLink, ' ', randomFactor < p ? 'does ' : 'does not ', 'form');
         if (randomFactor < p)
             return [...existingLinks, possibleLink];
         return existingLinks;
@@ -25,4 +24,11 @@ const toLinks = (nodes, p) => {
     return links;
 };
 exports.toLinks = toLinks;
+const toGraph = (nodes, links) => {
+    return {
+        nodes,
+        links,
+    };
+};
+exports.toGraph = toGraph;
 //# sourceMappingURL=graphGen.js.map

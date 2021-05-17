@@ -18,5 +18,8 @@
   "homepage": "https://github.com/mickey-is-codin/js-graph#readme",
   "dependencies": {
     "typescript": "^4.2.4"
+  },
+  "devDependencies": {
+    "@types/node": "^15.3.0"
   }
 }
