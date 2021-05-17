@@ -15,6 +15,12 @@ export const toNodes = (N: number): GraphNode[] => {
 };
 
 export const toLinks = (nodes: GraphNode[], p: number): GraphLink[] => {
-  const possibleLinks = toAllPossibleLinks(nodes);
-  return possibleLinks;
+  const possibleLinks: GraphLink[] = toAllPossibleLinks(nodes);
+  const links: GraphLink[] = possibleLinks.reduce((existingLinks: GraphLink[], possibleLink: GraphLink) => {
+    const randomFactor: number = Math.random();
+    console.log('link ', possibleLink, ' ', randomFactor < p ? 'does ' : 'does not ', 'form');
+    if (randomFactor < p) return [...existingLinks, possibleLink];
+    return existingLinks;
+  }, []);
+  return links;
 };

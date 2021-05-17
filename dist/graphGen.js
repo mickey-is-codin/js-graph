@@ -15,7 +15,14 @@ const toNodes = (N) => {
 exports.toNodes = toNodes;
 const toLinks = (nodes, p) => {
     const possibleLinks = toAllPossibleLinks(nodes);
-    return possibleLinks;
+    const links = possibleLinks.reduce((existingLinks, possibleLink) => {
+        const randomFactor = Math.random();
+        console.log('link ', possibleLink, ' ', randomFactor < p ? 'does ' : 'does not ', 'form');
+        if (randomFactor < p)
+            return [...existingLinks, possibleLink];
+        return existingLinks;
+    }, []);
+    return links;
 };
 exports.toLinks = toLinks;
 //# sourceMappingURL=graphGen.js.map
