@@ -1,0 +1,22 @@
+{
+  "name": "js-graph",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.ts",
+  "scripts": {
+    "start": "tsc && node dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mickey-is-codin/js-graph.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mickey-is-codin/js-graph/issues"
+  },
+  "homepage": "https://github.com/mickey-is-codin/js-graph#readme",
+  "dependencies": {
+    "typescript": "^4.2.4"
+  }
+}
